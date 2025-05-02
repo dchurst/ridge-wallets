@@ -1,0 +1,514 @@
+/* Daniel Hurst */
+
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+/* ---------- VARIABLES ---------- */
+:root{
+    --black: #212529;
+    --brown: #9d6556;
+    --light-grey: #d3d3d3;
+    --dark-grey: #343a40;
+    --white: #e9ecef;
+}
+
+/* ---------- DARK MODE TOGGLE ---------- */
+
+body.dark-mode {
+    background-color: var(--black);
+    color: var(--white);
+}
+
+/* DARK MODE STYLING */
+
+body.dark-mode #top-nav nav li a {
+    color: var(--white); 
+}
+
+body.dark-mode #top-nav nav li a:hover {
+    color: var(--brown);
+}
+
+body.dark-mode #utilities svg {
+    stroke: var(--white); 
+}
+
+body.dark-mode #hero-banner div {
+    background-color: var(--dark-grey);
+}
+
+body.dark-mode #hero-banner div a {
+    background-color: var(--white); 
+    color: var(--black); 
+}
+
+body.dark-mode #benefits {
+    color: var(--black);
+}
+
+body.dark-mode #your-cart h3 {
+    border-bottom: 1px solid var(--white);
+}
+
+body.dark-mode #your-cart button {
+    background-color: var(--white); 
+    color: var(--black);
+}
+
+body.dark-mode #contact {
+    background-color: var(--dark-grey);
+}
+
+body.dark-mode form input[type="submit"] {
+    background-color: var(--white); 
+    color: var(--black);
+}
+
+/* ---------- BASIC STYLING ---------- */
+
+body {
+    background-color: var(--white);
+    color: var(--black);
+    line-height: 1.25;
+    margin: 0 auto;
+    width: 1280px;
+}
+
+main section:nth-of-type(2),
+main section:nth-of-type(3) {
+    margin: 0 auto;
+    width: 75%;
+}
+
+h1, h2, h3, h4, a, button, #cta-banner p {
+    font-family: "Oswald", sans-serif;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+}
+
+p, span, label {
+    font-family: "Roboto", sans-serif;
+}
+
+h1 {
+    display: none;
+}
+
+h2 {
+    font-size: 1.75rem;
+}
+
+h4, 
+#top-nav nav ul li a {
+    font-size: 1.2rem;
+}
+
+/* ----- SKIP LINK ------ */
+
+#skip {
+    height: 30px;
+    left: 50%;
+    padding: 8px;
+    position: absolute;
+    transform: translateY(-100%);
+    transition: transform 0.3s;
+}
+
+/* ----- HEADER ----- */
+
+/* BLACK FRIDAY BANNER */
+
+header #cta-banner h2, 
+header #top-nav h2, 
+header #utilities h2 {
+    display: none;
+}
+
+#cta-banner {
+    background-color: var(--dark-grey);
+    display: grid; 
+    grid-template-columns: 1fr 1fr 1fr;
+}
+
+#cta-banner p {
+    color: var(--white);
+    place-self: center;
+    grid-column: 2;
+}
+
+#cta-banner label {
+    justify-self: end;
+}
+
+#cta-banner span {
+    display: none;
+}
+
+#cta-banner svg {
+    background-color: var(--white);
+    border-radius: 50%;
+    grid-column: 3;
+    margin: 5px;
+}
+
+#theme-icon {
+    cursor: pointer;
+    transition: stroke 0.3s;
+}
+
+/* NAV */
+
+#top-nav {
+    place-items: center;
+    display: grid;
+    grid-template-columns: .5fr 1fr .5fr;
+}
+
+#top-nav a span {
+    display: none;
+}
+
+#top-nav nav ul {
+    align-content: center;
+    display: flex;
+    flex-direction: row;
+}
+
+#top-nav nav li a {
+    color: var(--black);
+    margin: 0 25px;
+    text-decoration: none;
+}
+
+#top-nav nav li a:hover {
+    color: var(--brown);
+    text-decoration: underline;
+}
+
+#utilities {
+    justify-self: end;
+}
+
+#utilities a span {
+    display: none;
+}
+
+#utilities svg {
+    stroke: var(--black);
+    margin: 0 20px;
+}
+
+/* HERO BANNER */
+
+#hero-banner {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+#hero-banner div {
+    grid-column: 1;
+}
+
+#hero-banner div h2, 
+#hero-banner div p {
+    margin: 25px;
+}
+
+#hero-banner div p {
+    font-size: 1.1rem;
+    margin-bottom: 50px;
+}
+
+#hero-banner div a {
+    background-color: var(--black);
+    color: var(--white);
+    padding: 10px 25px;
+    margin-left: 50px;
+    text-decoration: none;
+}
+
+#hero-banner img {
+    grid-column: 2;
+}
+
+/* ----- MAIN ----- */
+
+/* BENEFITS */
+
+#benefits {
+    background-color: var(--light-grey);
+    padding: 40px 0;
+    margin: 50px 0;
+    text-align: center;
+    
+}
+
+#benefits-grid {
+    align-items: start;
+    justify-items: center;
+    display: grid;
+    grid-template-columns: 1fr repeat(3, 1.5fr) 1fr;
+    margin-top: 20px;
+}
+
+#benefits-grid section {
+    margin: 0 30px;
+}
+
+#benefits-grid section:nth-of-type(1) {
+    grid-column: 2;
+}
+
+#benefits-grid section h3 {
+    margin-bottom: 10px;
+}
+
+/* SHOP */
+
+#shop-product {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-auto-rows: auto;
+}
+
+#shop-product h2 {
+    grid-column: 1 / 3;
+    grid-row: 1;
+    text-align: center;
+}
+
+#product-display {
+    display: grid;
+    grid-column: 1;
+    grid-row: 2;
+    grid-template-columns: repeat(4, 1fr);
+    grid-auto-rows: auto;
+    margin-top: 40px;
+}
+
+#product-display h3 {
+    display: none;
+}
+
+#product-display section {
+    justify-content: space-evenly;
+    display: flex;
+    flex-direction: column;
+    margin: 20px 15px;
+}
+
+#your-cart {
+    display: flex;
+    flex-direction: column;
+    margin-top: 50px;
+    justify-self: center;
+}
+
+#your-cart h3 {
+    border-bottom: 1px solid var(--black);
+}
+
+#your-cart h3, #your-cart p {
+    margin-bottom: 15px;
+}
+
+#your-cart button {
+    background-color: var(--black);
+    border-radius: 5px;
+    color: var(--white);
+    margin: 20px 0 0 40px;
+    padding: 10px 25px;
+}
+
+/* CONTACT FORM */
+
+
+#contact {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-auto-rows: auto;
+    margin-top: 125px;
+    padding: 10px 40px;
+}
+
+#contact h2 {
+    display: none;
+}
+
+#img-section {
+    grid-column: 1;
+    grid-row: 1;
+    margin: 10px;
+    text-align: center;
+}
+
+#img-section h3 {
+    font-size: 1.75rem;
+    margin-bottom: 10px;
+}
+
+#img-section p {
+    margin-bottom: 15px;
+}
+
+#form {
+    margin-left: 75px;
+}
+
+#form h3 {
+    font-size: 1.5rem;
+    margin: 20px 0;
+}
+
+#form span {
+    color: red;
+}
+
+form {
+    align-items: flex-start;
+    display: flex;
+    flex-direction: column;
+    margin: 20px 0 20px 0;
+}
+
+form input, form textarea {
+    border: 1px solid var(--black);
+    border-radius: 5px;
+    margin-bottom: 10px;
+    width: 75%;
+}
+
+form input {
+    margin-bottom: 20px;
+    padding: 5px;
+}
+
+fieldset {
+    display: flex;
+    margin: 10px 0;
+}
+
+fieldset input, fieldset label {
+    margin: 15px 10px;
+}
+
+#contact-phone, #contact-email {
+    height: 20px;
+    width: 20px;
+}
+
+textarea {
+    height: 125px;
+}
+
+form input[type="submit"] {
+    align-self: flex-end;
+    background-color: var(--black);
+    color: var(--white);
+    font-family: "Oswald", sans-serif;
+    letter-spacing: 2px;
+    margin: 20px 60px 0 0;
+    padding: 10px 15px;
+    text-transform: uppercase;
+    width: 125px;
+}
+
+.success-message {
+    background-color: var(--light-grey);
+    border-radius: 5px;
+    color: #5ce65c;
+    font-size: 1rem;
+    margin: 20px 60px 0 0;
+    padding: 10px 20px;
+}
+
+/* ----- FOOTER ----- */
+
+footer {
+    background-color: var(--dark-grey);
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    margin-top: 125px;
+}
+
+footer img {
+    padding: 25px 0;
+}
+
+footer ul {
+    display: flex;
+    flex-direction: row;
+    margin: 25px;
+}
+
+footer svg {
+    fill: var(--white);
+    margin: 0 15px;
+}
+
+footer nav ul li a {
+    font-size: 1.3rem;
+}
+
+footer ul li a {
+    color: var(--white);
+    margin: 15px;
+    text-decoration: none;
+}
+
+footer ul li a:hover {
+    color: var(--brown);
+    text-decoration: underline;
+}
+
+footer ul li a:nth-of-type(3) {
+    border: 5px red solid;
+}
+
